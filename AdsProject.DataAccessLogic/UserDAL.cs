@@ -175,8 +175,7 @@ namespace AdsProject.DataAccessLogic
             using(var dbContext = new ApplicationDbContext())
             {
                 EncryptMD5(user);
-                userDb = await dbContext.User.FirstOrDefaultAsync(
-                    u => u.Login == user.Login && u.Password == u.Password &&
+                userDb = await dbContext.User.FirstOrDefaultAsync(u => u.Login == user.Login && u.Password == user.Password &&
                     u.Status == (byte)User_Status.ACTIVO);
             }
             return userDb!;
