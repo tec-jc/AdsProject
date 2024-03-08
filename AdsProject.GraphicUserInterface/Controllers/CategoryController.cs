@@ -3,9 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 using AdsProject.BussinessEntities;
 using AdsProject.BussinessLogic;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdsProject.GraphicUserInterface.Controllers
 {
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
     public class CategoryController : Controller
     {
         CategoryBL categoryBL = new CategoryBL();

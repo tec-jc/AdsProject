@@ -1,11 +1,14 @@
 ﻿using AdsProject.BussinessEntities;
 using AdsProject.BussinessLogic;
 using AdsProject.GraphicUserInterface.Helpers;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdsProject.GraphicUserInterface.Controllers
 {
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
     public class AdController : Controller
     {
         // creación de objetos de acceso a la capa BL
