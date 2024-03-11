@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace AdsProject.GraphicUserInterface.Controllers
 {
-    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Administrador")]
     public class UserController : Controller
     {
         // instancias de acceso a las clases BL

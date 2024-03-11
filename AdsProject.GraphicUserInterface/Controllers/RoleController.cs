@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AdsProject.GraphicUserInterface.Controllers
 {
-    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Administrador")]
     public class RoleController : Controller
     {
         RoleBL roleBL = new RoleBL();
